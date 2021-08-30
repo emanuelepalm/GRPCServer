@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_package = "it.palm";
+
+service contact{
+  rpc get(GetRequest) returns (GetResponse);
+  rpc search(SearchRequest) returns (SearchResponse);
+  rpc add(AddRequest) returns (AddResponse);
+  rpc getAll(AllRequest) returns(stream AllResponse);
+
+}
+
+message SearchRequest{
+  string firstname = 1;
+}
+
+message SearchResponse{
+  string firstname = 1;
+  string lastname = 2;
+  string contact = 3;
+}
+
+message GetRequest{
+
+}
+
+message GetResponse{
+string json = 1;
+}
+
+message AddRequest{
+  string firstname = 1;
+  string lastname = 2;
+  string contact = 3;
+}
+
+message AddResponse{
+  bool right = 1;
+}
+
+message AllRequest{
+
+}
+message AllResponse{
+  string firstname = 1;
+  string lastname = 2;
+  string contact = 3;
+}

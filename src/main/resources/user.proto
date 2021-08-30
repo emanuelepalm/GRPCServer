@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option java_package = "it.palm";
+
+service user{
+  rpc login(LoginRequest)  returns(LoginResponse);
+  rpc logout(Logout) returns(EmptyResponse);
+  rpc get(GetRequest) returns (GetResponse);
+
+}
+
+message  LoginRequest{
+    string username = 1;
+    string password = 2;
+}
+
+message Logout{
+
+}
+
+message EmptyResponse{
+
+}
+
+message LoginResponse{
+    string token = 1;
+    int32 responseCode = 2;
+}
+
+message GetRequest{
+  string token = 1;
+}
+
+message GetResponse{
+  string username = 1;
+  string password = 2;
+  bool admin = 3;
+}
