@@ -13,7 +13,5 @@ public class GRPCServer {
         server.start();
         System.out.println("Server started at " + server.getPort());
         server.awaitTermination();
-        System.out.println("Termination");
-
     }
 }
