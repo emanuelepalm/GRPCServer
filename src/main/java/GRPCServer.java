@@ -7,7 +7,7 @@ public class GRPCServer {
 
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Server startingg");
+        System.out.println("Server starting");
         Server server = ServerBuilder.forPort(8080).addService( new UserService()).addService(new ContactService()).build();
 
         server.start();
